@@ -4,7 +4,8 @@ def caesar():
         direction = input(
             "Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
         while direction != "encode" and direction != "decode":
-            direction = input("Please type either 'encode' to encrypt or 'decode' to decrypt:\n").lower()
+            direction = input(
+                "Please type either 'encode' to encrypt or 'decode' to decrypt:\n").lower()
 
         text = input("Type your message:\n").lower()
         while checking(text) == 0:
@@ -30,7 +31,7 @@ def encrypt(text, shift):
     newText = ""
     for char in text:
         if char.isspace():
-            newText = newText + char 
+            newText = newText + char
         else:
             newInt = ord(char) + shift
             if newInt > 122:
@@ -43,13 +44,14 @@ def decrypt(text, shift):
     newText = ""
     for char in text:
         if char.isspace():
-            newText = newText + char 
+            newText = newText + char
         else:
             newInt = ord(char) - shift
             if newInt < 97:
                 newInt += 26
             newText = newText + chr(newInt)
     print(f"The decrypted text is {newText}.")
+
 
 def checking(text):
     if all(x.isspace() for x in text):
