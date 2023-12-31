@@ -32,14 +32,12 @@ while game_is_on:
         scoreboard.refresh()
         snake.extend()
 
-    if snake.head.xcor() > 290 or snake.head.xcor() < -300 or snake.head.ycor() > 290 or snake.head.ycor() < -290:
+    if snake.head.xcor() > 290 or snake.head.xcor() < -290 or snake.head.ycor() > 290 or snake.head.ycor() < -290:
         game_is_on = False
         scoreboard.game_over()
         
-    for segment in snake.segs:
-        if segment == snake.head:
-            pass 
-        elif snake.head.distance(segment) < 10:
+    for segment in snake.segs[1:len(snake.segs)]:
+        if snake.head.distance(segment) < 10:
             game_is_on = False 
             scoreboard.game_over()
 

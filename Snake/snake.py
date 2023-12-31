@@ -22,7 +22,7 @@ class Snake():
     def add_segment(self, position):
         new_turt = Turtle("square")
         new_turt.up()
-        if position == (0, 0):
+        if position == STARTING_POSITION[0]:
             new_turt.color("DarkGreen")
         else:
             new_turt.color("PaleGreen")
