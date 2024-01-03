@@ -22,10 +22,7 @@ class Snake():
     def add_segment(self, position):
         new_turt = Turtle("square")
         new_turt.up()
-        if position == STARTING_POSITION[0]:
-            new_turt.color("DarkGreen")
-        else:
-            new_turt.color("PaleGreen")
+        new_turt.color("DarkGreen")
         new_turt.goto(position)
         self.segs.append(new_turt)
         
@@ -38,7 +35,6 @@ class Snake():
             old_y = self.segs[seg_num - 1].ycor()
             self.segs[seg_num].goto(new_x, old_y)
         self.segs[0].forward(MOVE_DISTANCE)
-        print(self.segs[0].position())
 
     def up(self):
         if self.head.heading() != DOWN:
