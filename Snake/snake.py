@@ -25,6 +25,13 @@ class Snake():
         new_turt.color("DarkGreen")
         new_turt.goto(position)
         self.segs.append(new_turt)
+    
+    def reset(self):
+        for seg in self.segs:
+            seg.goto(1500, 1500)
+        self.segs.clear()
+        self.create_snake()
+        self.head = self.segs[0]
         
     def extend(self):
         self.add_segment(self.segs[-1].position())
