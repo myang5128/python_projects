@@ -5,6 +5,7 @@ COLOR_LIST = ["red", "blue", "orange", "yellow", "green", "purple"]
 X_FORCE = 10
 Y_FORCE = 10
 START_SPEED = 0.1
+SPEED_DEC = 0.8
 
 class Ball(Turtle):
     def __init__(self):
@@ -34,4 +35,4 @@ class Ball(Turtle):
         self.bounce_x()
         
     def increase_speed(self):
-        self.ballSpeed *= 0.9
+        self.ballSpeed *= SPEED_DEC
