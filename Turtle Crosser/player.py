@@ -36,7 +36,7 @@ class Player(Turtle):
         if self.xcor() < X_MAX:
             self.seth(0)
             self.forward(MOVEFORCE)
-            
+
     def reset(self):
         self.seth(90)
         self.goto(START_LOCATION)

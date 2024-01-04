@@ -24,18 +24,13 @@ screen.onkey(player.down, "s")
 screen.onkey(player.right, "d")
 screen.onkey(player.left, "a")
 
-
-def gen_Cars(level):
-    car.create()
-    car.move(8 + level)
-
-
 # logic
 while game_On:
     screen.update()
     time.sleep(0.1)
 
-    gen_Cars(scoreboard.level)
+    car.create()
+    car.move(8 + scoreboard.level)
 
     if player.ycor() > 290:
         scoreboard.next_Level()
